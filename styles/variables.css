@@ -2,3 +2,16 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
+:root {
+  /* Дублируем переменные для svetloj темы */
+  --background-image: url(/images/cover-image-light.png);
+  --background-color: #fff1f7;
+  --main-text-color: #353430;
+  --accent-color: #ff8dcb;
+  --corner-color: #353430;
+  --button-color: #353430;
+  --title-color: #ffc2e6;
+  --font-size: 18px;
+  --rec-color: #fff1f7;
+}
