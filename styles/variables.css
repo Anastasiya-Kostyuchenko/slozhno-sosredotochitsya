@@ -5,7 +5,7 @@
 
 :root {
   /* Дублируем переменные для svetloj темы */
-  --background-image: url(/images/cover-image-light.png);
+  --background-image: url(../images/cover-image-light.png);
   --background-color: #fff1f7;
   --main-text-color: #353430;
   --accent-color: #ff8dcb;
@@ -14,4 +14,9 @@
   --title-color: #ffc2e6;
   --font-size: 18px;
   --rec-color: #fff1f7;
+  --hover-border-color: 1px solid rgba(50, 49, 45, 0.4);
+  --link-shadow: var(--accent-color);
+  --hover-link-color: rgba(50, 49, 45, 0.4);
+  --title-decor-color: #353430;
+  --padding: 0 20px;
 }

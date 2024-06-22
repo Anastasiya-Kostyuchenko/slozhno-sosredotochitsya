@@ -10,7 +10,7 @@ body {
   min-inline-size: 375px;
   max-inline-size: min(1024px, 100%);
   margin: auto;
-  padding: 0 20px;
+  padding: 0;
   font-size: 18px;
 }
 
