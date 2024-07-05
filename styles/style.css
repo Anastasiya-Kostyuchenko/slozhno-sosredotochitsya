@@ -1,5 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+* {
+  /* outline: 1px solid red; */
+}
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-color: var(--background-color);
@@ -10,7 +12,9 @@
   background-size: cover;
   background-attachment: fixed;
   color: var(--main-text-color);
+  overflow: auto;
 }
+
 .main-content {
   display: flex;
   flex-direction: column;
@@ -21,7 +25,7 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  margin-block-end: 50px;
+  margin-block-end: 55px;
   block-size: max(100vb, 668px);
   padding: 20px var(--padding);
   align-items: center;
@@ -31,7 +35,7 @@
   display: flex;
   flex-direction: row;
   list-style: none;
-  gap: 20px;
+  gap: 8px;
   color: var(--button-color);
 }
 
@@ -39,6 +43,7 @@
   background-color: inherit;
   font-family: inherit;
   font-size: var(--font-size);
+  padding: 0 13px;
   text-transform: lowercase;
   border: none;
   cursor: pointer;
@@ -55,14 +60,12 @@
   border: var(--hover-border-color);
   cursor: pointer;
 }
-
-.header__theme-menu-button:focus-visible {
-  outline: none;
-  border-block-end: 1px solid var(--button-color);
-}
-
 .header__theme-menu-button:focus {
   outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--button-color);
 }
 
 .header__theme-menu {
@@ -76,16 +79,16 @@
   text-shadow: 4px 4px 0 #ff0070;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   margin-block-start: 8px;
-  margin-inline-start: -15px;
 }
 
 .about {
   color: var(--main-text-color);
   background-color: var(--accent-color);
   font-size: var(--font-sizes);
+  line-height: 23.4px;
   font-weight: bold;
-  margin-inline-start: 50%;
-  margin-block-start: -30px;
+  margin-inline: 50% 20px;
+  margin-block-start: -35px;
 }
 
 .rec {
@@ -135,7 +138,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: var(--padding);
+  gap: 20px;
 }
+
 .answers {
   display: grid;
   row-gap: 20px;
@@ -143,8 +148,6 @@
 }
 
 .title-question {
-  grid-row: span 4;
-  margin-block-end: 20px;
   width: 100%;
   font-size: var(--font-size);
   color: var(--corner-color);
@@ -152,10 +155,12 @@
 
 .reasons {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(2, auto);
-  column-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   padding: var(--padding);
+}
+.text {
+  line-height: 130%;
 }
 
 .reasons-title-main {
@@ -163,7 +168,7 @@
   width: calc(315 / 1024 * 100%);
 }
 
-.reasons-article-item {
+.card-item {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -173,17 +178,17 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: var(--padding);
-  margin-block-start: -30px;
   gap: 20px;
 }
 
 .answers-advises {
+  display: grid;
+  row-gap: 20px;
   grid-column: span 2;
 }
-.answer-item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+
+.title-answer {
+  font-weight: 400;
 }
 
 .title-question-advises {
@@ -193,7 +198,6 @@
 .title-decor {
   color: var(--title-decor-color);
   background-color: var(--accent-color);
-  margin-block-end: 10px;
   font-size: var(--font-size);
 }
 
@@ -203,14 +207,19 @@
   text-decoration: none;
 }
 
-.link-in-text:focus-visible {
-  outline: none;
-  border-block-end: 1px solid var(--hover-link-color);
+.link-in-text:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--main-text-color);
 }
 
 .link-in-text:focus {
   outline: none;
 }
+
+.link-in-text:focus-visible {
+  border: 1px solid var(--main-text-color);
+}
+
 .gallery {
   display: grid;
   grid-template-areas:
@@ -221,6 +230,7 @@
   gap: 20px;
   padding: var(--padding);
 }
+
 .title-gallery {
   grid-area: title;
 }
@@ -262,31 +272,14 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  color: var(--title-color);
-  text-shadow: 2px 2px 0 #ff0070;
   block-size: max(100vb, 668px);
-  margin-block-start: 50px;
+  margin-block-start: 60px;
 }
 
-.decorated-zone::before {
-  content: " ";
-  position: absolute;
-  border-block-start: 1px solid var(--corner-color);
-  border-inline-end: 1px solid var(--corner-color);
-  inline-size: 25px;
-  block-size: 25px;
-  margin: auto auto 20px 0;
-}
-
-.decorated-zone::after {
-  content: " ";
-  position: absolute;
-  border-block-end: 1px solid var(--corner-color);
-  border-inline-start: 1px solid var(--corner-color);
-  inline-size: 25px;
-  block-size: 25px;
-  margin: 20px 0 auto auto;
+.footer-title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  text-shadow: 2px 2px 0 #ff0070;
+  color: var(--title-color);
 }
 
 @media (max-width: 768px) {
@@ -296,39 +289,31 @@
   .reasons {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
-    margin-block-end: 10px;
+  }
+  .advises {
+    column-gap: 20px;
   }
   .header__theme-menu-list {
     flex-direction: column;
     margin: 175px 20px auto auto;
     gap: 10px;
   }
-  .title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-inline-start: 0;
-  }
-  .about {
-    max-width: 364px;
-    width: 100%;
-  }
-  .answers-advises {
-    gap: 10px;
-  }
   .answer-item {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+  }
+  .footer-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 575px) {
   .page {
     margin: auto;
   }
-  /* .main__content {
-    gap: 40px;
-  } */
+  .main-content {
+    row-gap: 50px;
+  }
 
   .header {
     padding: 10px;
@@ -347,13 +332,18 @@
     inset-block-end: 10px;
   }
   .header__theme-menu-list {
-    margin: 65px 10px auto auto;
+    margin: 65px 0 auto auto;
   }
   .title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     margin-inline-start: 0;
     line-height: 95.7px;
   }
+
+  .about {
+    padding-block-start: 0;
+  }
+
   .why {
     display: flex;
     flex-direction: column;
@@ -364,7 +354,6 @@
     margin-block-end: 0;
   }
   .reasons {
-    margin-block-start: -35px;
     padding: 0 10px;
     gap: 20px;
   }
@@ -374,14 +363,12 @@
 
   .advises {
     padding: 0 10px;
-    margin-block-start: -45px;
     row-gap: 20px;
   }
   .answer-item {
     gap: 10px;
   }
   .gallery {
-    margin-block-start: -85px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -393,15 +380,15 @@
     margin-block-end: 0;
   }
   .about {
-    margin-inline-start: 0;
-    margin-block-start: 10px;
+    margin-inline: 10px;
+    /* margin-block-start: 10px; */
   }
   .advises {
     display: flex;
     flex-direction: column;
     margin-block-end: 50px;
   }
-  .footer {
+  .footer-title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 }
