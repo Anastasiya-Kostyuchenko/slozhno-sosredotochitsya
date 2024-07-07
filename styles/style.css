@@ -25,7 +25,7 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  margin-block-end: 55px;
+  margin-block-end: 60px;
   block-size: max(100vb, 668px);
   padding: 20px var(--padding);
   align-items: center;
@@ -381,13 +381,16 @@
   }
   .about {
     margin-inline: 10px;
-    /* margin-block-start: 10px; */
   }
   .advises {
     display: flex;
     flex-direction: column;
-    margin-block-end: 50px;
   }
+
+  .footer {
+    margin-block-start: 40px;
+  }
+
   .footer-title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
